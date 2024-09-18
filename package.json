@@ -1,0 +1,19 @@
+{
+  "name": "dsa-revisor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "addData": "node app.mjs",
+    "revise": "node revise.mjs",
+    "test": "echo \"Error: no test specified\""
+  },
+  "author": "Siddharth Choudhary",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^11.0.2"
+  }
+}
