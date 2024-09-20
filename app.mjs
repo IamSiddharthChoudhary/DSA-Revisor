@@ -1,8 +1,9 @@
 import figlet from "figlet";
 import gradient from "gradient-string";
 import inquirer from "inquirer";
+import fs from "fs";
 import jsonFile from "./dsa.json" assert { type: "json" };
-import { exec, execSync } from "child_process";
+import { execSync } from "child_process";
 
 const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
@@ -58,27 +59,28 @@ async function start() {
     const topic = await Topic();
     const description = await Description();
 
-    let jsonString = JSON.stringify(jsonFile);
     const date = new Date();
     const d = date.getDate();
     const m = date.getMonth();
     const y = date.getFullYear();
     const effDate = d + m * 30 + 365 * (y - 2024);
 
-    let json = `{"name": "${name}", "topic": "${topic}", "description": "${description}", "time": ${effDate}}`;
-    const index = jsonString.indexOf("[");
-    const prevObjs = jsonString.slice(index + 1);
+    const newEntry = {
+      name: name,
+      topic: topic,
+      description: description,
+      time: effDate,
+    };
 
-    if (prevObjs[0] == "{") {
-      json = json + ",";
-    }
+    const currentData = jsonFile || [];
 
-    jsonString =
-      jsonString.slice(0, index + 1) +
-      JSON.stringify(json) +
-      JSON.stringify(prevObjs);
+    currentData.push(newEntry);
 
-    execSync(`echo ${jsonString} > dsa.json`);
+    fs.writeFileSync(
+      "./dsa.json",
+      JSON.stringify(currentData, null, 2),
+      "utf-8"
+    );
   }
 }
 
