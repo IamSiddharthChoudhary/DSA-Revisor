@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "name": "Reverse Nodes in k-Group",
+    "topic": "LinkedList",
+    "description": "",
+    "time": 260
+  },
+  {
+    "name": "Palindrome Linked List",
+    "topic": "LinkedList",
+    "description": "checking if values in liked list are palindrome or not",
+    "time": 260
+  },
+  {
+    "name": "Find the duplicate in an array of N+1 integers",
+    "topic": "Arrays",
+    "description": "",
+    "time": 260
+  },
+  {
+    "name": "Repeat and Missing Number",
+    "topic": "Arrays",
+    "description": "",
+    "time": 260
+  },
+  {
+    "name": "Inversion of Array (Pre-req: Merge Sort)",
+    "topic": "arrays",
+    "description": "",
+    "time": 260
+  },
+  {
+    "name": "Merge Overlapping Subintervals",
+    "topic": "Arrays",
+    "description": "",
+    "time": 260
+  }
+]
